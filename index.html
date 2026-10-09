@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sharon Kwon</title>
+<meta name="description" content="Sharon Kwon is a high school senior in New Jersey who illustrates children’s books about emotions, writes award-winning essays on psychology and culture, and served two years with Old Tappan Volunteer EMS.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --coral: #e0674f;
+    --coral-deep: #b9493a;
+    --blush: #fbeee9;
+    --sand: #faf6f2;
+    --charcoal: #23262b;
+    --slate: #5b6470;
+    --line: #eadfd9;
+    --ink-on-coral: #fff7f3;
+    --serif: "DM Serif Display", Georgia, "Times New Roman", serif;
+    --sans: "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body { margin: 0; background: #fff; color: var(--charcoal); font-family: var(--sans); font-size: 17px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+  a { color: var(--coral-deep); text-decoration: none; }
+  a:hover { text-decoration: underline; text-underline-offset: 3px; }
+  a:focus-visible { outline: 2px solid var(--coral); outline-offset: 3px; }
+  img { max-width: 100%; height: auto; display: block; }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 0 24px; }
+
+  header.top { position: sticky; top: 0; z-index: 20; background: rgba(255,255,255,.94); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+  .topin { max-width: 980px; margin: 0 auto; padding: 0 24px; height: 62px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  .brand { font-family: var(--serif); font-size: 22px; color: var(--coral-deep); letter-spacing: .2px; }
+  .brand:hover { text-decoration: none; }
+  nav.top ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 22px; flex-wrap: wrap; }
+  nav.top a { color: var(--charcoal); font-size: 14px; font-weight: 500; padding: 6px 0; border-bottom: 2px solid transparent; }
+  nav.top a:hover { text-decoration: none; color: var(--coral-deep); }
+  nav.top a[aria-current="true"] { border-bottom-color: var(--coral); }
+
+  .herowrap { background: var(--blush); }
+  .hero { max-width: 980px; margin: 0 auto; padding: 76px 24px 64px; display: grid; grid-template-columns: 1.25fr .75fr; gap: 56px; align-items: center; }
+  .hero h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(44px, 5.6vw, 66px); line-height: 1.02; margin: 0 0 22px; color: var(--charcoal); }
+  .hero h1 span { color: var(--coral-deep); }
+  .hero .says { font-size: 21px; line-height: 1.5; margin: 0 0 18px; max-width: 34ch; color: var(--charcoal); }
+  .hero .meta { color: var(--slate); font-size: 15.5px; margin: 0 0 28px; max-width: 48ch; }
+  .cta { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn { display: inline-block; font-weight: 600; font-size: 15px; padding: 11px 20px; border-radius: 8px; background: var(--coral); color: #fff; }
+  .btn:hover { background: var(--coral-deep); text-decoration: none; }
+  .btn.ghost { background: transparent; color: var(--coral-deep); border: 1.5px solid var(--coral); }
+  .btn.ghost:hover { background: #fff; }
+  .books { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .books img { border-radius: 6px; border: 4px solid #fff; box-shadow: 0 16px 36px rgba(185,73,58,.22); }
+  .books figcaption { grid-column: 1 / -1; font-size: 13.5px; color: var(--slate); margin-top: 6px; }
+  .books figure { display: contents; }
+
+  .stats { background: var(--coral); color: var(--ink-on-coral); }
+  .stats .wrap { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px 24px; padding: 22px 24px; }
+  .stat .n { font-family: var(--serif); font-size: 26px; line-height: 1.05; }
+  .stat .l { font-size: 13.5px; margin-top: 5px; opacity: .9; }
+
+  main { max-width: 980px; margin: 0 auto; padding: 0 24px 80px; }
+  section { padding: 56px 0 12px; max-width: 760px; }
+  h2 { font-family: var(--serif); font-weight: 400; font-size: 32px; line-height: 1.15; margin: 0 0 6px; color: var(--charcoal); }
+  h2::after { content: ""; display: block; width: 48px; height: 4px; border-radius: 2px; background: var(--coral); margin-top: 12px; }
+  .lead { font-size: 18.5px; color: var(--slate); margin: 18px 0 24px; max-width: 60ch; line-height: 1.55; }
+  h3 { font-family: var(--serif); font-weight: 400; font-size: 22px; margin: 32px 0 4px; color: var(--charcoal); }
+  h4 { font-size: 16px; margin: 20px 0 4px; }
+  p { margin: 0 0 14px; max-width: 66ch; }
+  .when { color: var(--coral-deep); font-size: 14px; font-weight: 600; margin: 0 0 10px; }
+  ul { padding-left: 20px; max-width: 66ch; }
+  li { margin-bottom: 6px; }
+
+  figure { margin: 20px 0; }
+  figcaption { font-size: 13.5px; color: var(--slate); margin-top: 8px; }
+  .photo { border-radius: 10px; border: 1px solid var(--line); }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start; }
+  .side { display: grid; grid-template-columns: 1.3fr 1fr; gap: 28px; align-items: start; }
+  .side p { max-width: none; }
+  .awards { list-style: none; padding: 0; margin: 20px 0 0; max-width: none; display: grid; grid-template-columns: 1fr 1fr; gap: 10px 32px; }
+  .awards li { padding: 12px 14px; background: var(--sand); border-left: 4px solid var(--coral); border-radius: 0 8px 8px 0; font-size: 15px; margin: 0; }
+  .certs { list-style: none; padding: 0; margin: 28px 0 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; max-width: none; }
+  .certs img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: center; border-radius: 8px; border: 1px solid var(--line); background: #fff; }
+  .certs figure { margin: 0; }
+  .certs figcaption { font-size: 12.5px; }
+  .kv { display: grid; grid-template-columns: 160px 1fr; gap: 8px 20px; max-width: 560px; margin: 8px 0 0; }
+  .kv dt { color: var(--slate); font-size: 14.5px; }
+  .kv dd { margin: 0; }
+  footer { background: var(--blush); color: var(--slate); font-size: 13.5px; }
+  footer div { max-width: 980px; margin: 0 auto; padding: 22px 24px; }
+
+  @media (max-width: 860px) {
+    .topin { height: auto; padding: 12px 16px; flex-direction: column; align-items: flex-start; gap: 6px; }
+    nav.top ul { gap: 14px; }
+    .hero { grid-template-columns: 1fr; gap: 32px; padding: 44px 16px 44px; }
+    .stats .wrap { grid-template-columns: repeat(2, 1fr); }
+    main { padding: 0 16px 64px; }
+    .two, .side { grid-template-columns: 1fr; }
+    .awards { grid-template-columns: 1fr; }
+    .certs { grid-template-columns: 1fr 1fr; }
+    h2 { font-size: 27px; }
+    .kv { grid-template-columns: 1fr; gap: 2px 0; }
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="topin">
+    <a class="brand" href="#top">Sharon Kwon</a>
+    <nav class="top" aria-label="Sections">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#illustration">Illustration</a></li>
+        <li><a href="#writing">Writing</a></li>
+        <li><a href="#ambulance">EMS</a></li>
+        <li><a href="#teaching">Teaching</a></li>
+        <li><a href="#leadership">Leadership</a></li>
+        <li><a href="#honors">Honors</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="herowrap" id="top">
+  <section class="hero">
+    <div>
+      <h1>Sharon <span>Kwon</span></h1>
+      <p class="says">Illustrator of a children’s book series on emotions, award-winning essayist on psychology and culture, and a two-year junior member of a volunteer ambulance corps.</p>
+      <p class="meta">Senior, Northern Valley Regional High School at Old Tappan, New Jersey. Class of 2027. Applying to study communication sciences and disorders.</p>
+      <div class="cta">
+        <a class="btn" href="#illustration">See the books</a>
+        <a class="btn ghost" href="#contact">Contact</a>
+      </div>
+    </div>
+    <div class="books">
+      <figure>
+        <img src="assets/book1.jpg" alt="Cover of Why Do I Get So Angry?, Mia’s Feelings Lab Book 1, illustrated by Sharon Kwon">
+        <img src="assets/book2.jpg" alt="Cover of Why Am I Shy Around New People?, Mia’s Feelings Lab Book 2, illustrated by Sharon Kwon">
+        <figcaption>Mia’s Feelings Lab, Books 1 and 2. Written by Kayla Park, illustrated by Sharon Kwon.</figcaption>
+      </figure>
+    </div>
+  </section>
+</div>
+
+<div class="stats">
+  <div class="wrap">
+    <div class="stat"><div class="n">2 books</div><div class="l">illustrated, Mia’s Feelings Lab</div></div>
+    <div class="stat"><div class="n">John Locke Prize</div><div class="l">Commendation, Psychology, 2026</div></div>
+    <div class="stat"><div class="n">National Merit</div><div class="l">Commended Student, 2027 program</div></div>
+    <div class="stat"><div class="n">2 years</div><div class="l">Old Tappan Volunteer EMS</div></div>
+  </div>
+</div>
+
+<main>
+
+  <section id="about">
+    <h2>About</h2>
+    <p class="lead">Three threads run through this page: illustration, writing, and direct work with people in distress.</p>
+    <p>I am a senior at Northern Valley Regional High School at Old Tappan. This year I am taking AP Research, AP Biology, AP Literature, and AP Calculus, after AP Chemistry, AP Physics 1, AP Language, AP World History, and AP Precalculus as a junior. The College Board named me an AP Scholar with Distinction in 2026, I scored a 1500 on the SAT, with an 800 in Math, and I was named a Commended Student in the 2027 National Merit Scholarship Program.</p>
+    <p>Outside class I illustrate children’s books that explain the science of emotions, I write essays about how culture shapes the way we see ourselves, and for two years I worked shifts as a junior member of the Old Tappan Emergency Medical Services. I want to study psychology, and eventually to work with children and teenagers in clinical settings.</p>
+  </section>
+
+  <section id="illustration">
+    <h2>Illustration and art</h2>
+    <p class="lead">Illustration for children’s books, juried exhibitions, and a monthly art program for preschoolers.</p>
+
+    <h3>Mia’s Feelings Lab, illustrator</h3>
+    <p class="when">2026, with author Kayla Park · two books so far, ages 7 to 13</p>
+    <p>Each book pairs a story with a hands-on activity. In Book 1, <em>Why Do I Get So Angry?</em>, Mia learns that a small part of the brain works like a smoke detector. In Book 2, <em>Why Am I Shy Around New People?</em>, she finds her way back to the cafeteria one small step at a time. I drew Mia, her neighbor Dr. Reena, and every scene, keeping the pictures clear enough that a seven-year-old can read the feeling on Mia’s face before reading the words.</p>
+
+    <h3>Healing Through the Arts, Community Award</h3>
+    <p class="when">June 2026 · Hope &amp; Healing Juried Art Show, Allentown Art Museum community gallery</p>
+    <p>My piece was selected for the juried show and displayed from June 11 to August 9, 2026. Art from the show is placed in hospitals, clinics, mental health facilities, and hospices.</p>
+
+    <h3>AIM Design Challenge, Honorable Mention</h3>
+    <p class="when">2026 · 9th annual challenge for youth mental health awareness</p>
+
+    <h3>Art Club president</h3>
+    <p class="when">Officer in 2025–26, president in 2026–27 · membership grew from 107 to 165</p>
+    <p>Every month the club runs an art lesson for the preschoolers who attend school in our building. I plan the materials, lead activities in front of the class, and direct the other members. At school events I paint faces at Trunk or Treat and run the sign-up booth at the club fair.</p>
+
+    <h3>Celebrating Art, published</h3>
+    <p class="when">Two works selected for the national student anthology</p>
+    <div class="two">
+      <figure>
+        <img class="photo" src="assets/breakfast-time.jpg" alt="Breakfast Time, a painting by Sharon Kwon of eggs and bacon on toast beside a coffee cup on a checkered tablecloth">
+        <figcaption><em>Breakfast Time</em>, acrylic. Selected for publication by Celebrating Art.</figcaption>
+      </figure>
+      <figure>
+        <img class="photo" src="assets/exhibition-2025.jpg" alt="Sharon and other student artists holding their framed artwork at the 2025 art exhibition">
+        <figcaption>Student art exhibition, 2025.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="writing">
+    <h2>Writing and psychology</h2>
+    <p class="lead">Critical essays on how culture shapes the mind. Both pieces entered in 2026 were recognized, one of them internationally.</p>
+
+    <h3>John Locke Institute Global Essay Prize, Commendation</h3>
+    <p class="when">2026 · Psychology category · awarded October 3, 2026, at Grosvenor House, London</p>
+    <p>My essay was shortlisted in the Psychology category of an international competition that draws thousands of entries each year, and at the awards ceremony it received a Commendation.</p>
+
+    <h3>Scholastic Art &amp; Writing Awards</h3>
+    <p class="when">2026 · Silver Key, Critical Essay · Honorable Mention, Flash Fiction</p>
+    <p>The Silver Key essay, “When Beauty Becomes a Brand: The Dangerous Influence of K-pop Aesthetics,” looks at how an industry’s idea of beauty becomes a standard that teenagers measure themselves against. The flash fiction piece is called “The Last Day.”</p>
+
+    <h3>AP Research</h3>
+    <p class="when">2026–27 · year-long independent study</p>
+    <p>I am studying how short cooking tutorials on YouTube teach, and what prior research on instructional video says about why some of them work. The project ends with a paper and a presentation in spring 2027.</p>
+  </section>
+
+  <section id="ambulance">
+    <h2>Emergency medical services</h2>
+    <p class="lead">Two years as a junior member of Old Tappan Volunteer Emergency Medical Services, at least six hours a week.</p>
+    <p class="when">2024 to 2026 · selected by application and interview · Junior of the Month, July 2025</p>
+    <div class="side">
+    <div>
+    <p>Before every shift I checked the rig. On calls I gathered the patient’s information, assisted the crew chief, and did what the patient needed within what I was allowed to do. On the way in, I called the hospital to tell them who we were bringing. Many of those nights were trainings, meetings, and rig checks on top of the shift itself.</p>
+    <p>This is where my interest in psychology stopped being a subject and became a question. Most of the people we picked up were frightened, and the thing that helped most was often not medical.</p>
+    </div>
+    <figure>
+      <img class="photo" src="assets/ems.jpg" alt="Sharon in front of the Old Tappan Volunteer EMS ambulance holding her Junior of the Month certificate">
+      <figcaption>Junior of the Month, July 2025.</figcaption>
+    </figure>
+    </div>
+  </section>
+
+  <section id="teaching">
+    <h2>Teaching and community</h2>
+    <p class="lead">Three years of weekly Korean-language teaching, plus library art classes and veterans’ commemorations.</p>
+
+    <h3>Korean school, teaching assistant</h3>
+    <p class="when">2023 to 2026 · three hours every week</p>
+    <p>I help a class of about six children with reading, writing, speaking, and listening, using workbook practice. Before class I lead the movement and worship warm-up, and after class I help with the art and cooking electives.</p>
+
+    <h3>Teens for Arts</h3>
+    <p class="when">2025–26 · two hours a week</p>
+    <p>I designed the posters for the weekend art classes at local libraries, taught at the classes, and helped make more than 120 cards for hospital patients.</p>
+    <div class="two">
+      <figure>
+        <img class="photo" src="assets/korean-school.jpg" alt="Sharon performing on stage with the Korean school worship team">
+        <figcaption>Leading the movement warm-up at Korean school.</figcaption>
+      </figure>
+      <figure>
+        <img class="photo" src="assets/cards.jpg" alt="Teens for Arts volunteers holding handmade get-well cards for hospital patients">
+        <figcaption>Cards for hospital patients, Teens for Arts.</figcaption>
+      </figure>
+    </div>
+
+    <h3>Honoring Korean War veterans</h3>
+    <p class="when">July 2025 and July 2026</p>
+    <p>I performed in an Evening of Music for Korean War veterans (New Jersey Senate citation, 2025) and volunteered at the 76th anniversary commemoration of the Korean War Armistice (Bergen County Clerk recognition, 2026).</p>
+  </section>
+
+  <section id="leadership">
+    <h2>Leadership</h2>
+    <p class="lead">Wellness content for a peer-support app, media for a student leadership forum, and volunteer work for a human rights organization.</p>
+
+    <h3>VOY (Voices of the Young), Wellness Content Lead</h3>
+    <p class="when">2024 to 2027, grades 10 to 12</p>
+    <p>Mo Soop (모두의 대나무 숲) is VOY’s anonymous peer-support app, “a safe space to share and heal.” I built its Exercise section: nine ways to settle your body when a feeling gets too big, each matched to a moment. Box breathing for when you feel a panic coming, a slow staircase walk for when you need a reset, a pillow to punch for when you are angry, a 20-minute walk for when your mind is racing. To write it, I studied Psychological First Aid, the method first responders use to steady people right after something frightening happens, and turned what I learned into steps a teenager can follow alone on a phone. I also draw the illustrated posts for VOY’s Instagram that introduce the app and share the same techniques.</p>
+    <a class="btn" href="https://mo-soop.glide.page" target="_blank" rel="noopener">Open Mo Soop</a>
+    <figure>
+      <img class="photo" src="assets/mosoop-exercise.jpg" alt="The Exercise section of the Mo Soop app, showing nine calming activities such as Breathing Box, Slow Staircase Walk, and 20-Minute Walk, each labeled with the moment it is for">
+      <figcaption>The Exercise section of Mo Soop. Each activity is labeled with the moment it is for.</figcaption>
+    </figure>
+
+    <h3>YGLE (Young Global Leaders of the East), Director of Media</h3>
+    <p class="when">2024 to 2027, grades 10 to 12</p>
+    <p>I handle press releases and local media coverage for the annual Global Leadership Forum.</p>
+
+    <h3>LiNK North Jersey Rescue Team, volunteer</h3>
+    <p class="when">2024 to 2027, grades 10 to 12</p>
+    <p>I help at awareness events and fundraisers organized with Liberty in North Korea.</p>
+  </section>
+
+  <section id="honors">
+    <h2>Honors</h2>
+    <ul class="awards">
+      <li>John Locke Institute Global Essay Prize, Commendation in Psychology, 2026</li>
+      <li>Scholastic Art &amp; Writing Awards, Silver Key (critical essay) and Honorable Mention (flash fiction), 2026</li>
+      <li>Healing Through the Arts Community Award, Hope &amp; Healing Juried Art Show, 2026</li>
+      <li>AIM Design Challenge, Honorable Mention, 2026</li>
+      <li>National Merit Scholarship Program, Commended Student, 2027 program (PSAT/NMSQT Selection Index 208)</li>
+      <li>AP Scholar with Distinction, 2026</li>
+      <li>College Board National Recognition Program, School Recognition Award, 2026</li>
+      <li>National Honor Society, inducted December 2025</li>
+      <li>Old Tappan EMS, Junior of the Month, July 2025</li>
+      <li>New Jersey Senate Citation, Evening of Music for Korean War veterans, 2025</li>
+      <li>Bergen County Clerk Certificate of Recognition, Korean War Armistice commemoration, 2026</li>
+      <li>Helper Helper International Service Honor, Gold, 2025</li>
+      <li>Celebrating Art, two works selected for publication</li>
+    </ul>
+    <ul class="certs">
+      <li><figure><img src="assets/cert-johnlocke.jpg" alt="John Locke Institute Global Essay Prize in Psychology, Commendation certificate, October 2026"><figcaption>John Locke Commendation</figcaption></figure></li>
+      <li><figure><img src="assets/cert-scholastic.jpg" alt="Scholastic Art and Writing Awards 2026 Silver Key certificate"><figcaption>Scholastic Silver Key</figcaption></figure></li>
+      <li><figure><img src="assets/cert-ap.jpg" alt="AP Scholar with Distinction certificate, June 2026"><figcaption>AP Scholar with Distinction</figcaption></figure></li>
+      <li><figure><img src="assets/cert-ems.jpg" alt="Old Tappan EMS Junior of the Month certificate, July 2025"><figcaption>EMS Junior of the Month</figcaption></figure></li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <dl class="kv">
+      <dt>Email</dt><dd><a href="mailto:sharonkwon020609@gmail.com">sharonkwon020609@gmail.com</a></dd>
+      <dt>Location</dt><dd>Bergen County, New Jersey</dd>
+      <dt>Mo Soop</dt><dd><a href="https://mo-soop.glide.page" target="_blank" rel="noopener">mo-soop.glide.page</a></dd>
+      <dt>Mia’s Feelings Lab</dt><dd>Amazon listing to be added at release.</dd>
+    </dl>
+  </section>
+
+</main>
+<footer><div>© 2026 Sharon Kwon</div></footer>
+
+<script>
+  const links=[...document.querySelectorAll('nav.top a[href^="#"]')];
+  const map=new Map(links.map(a=>[a.getAttribute('href').slice(1),a]));
+  const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){links.forEach(a=>a.removeAttribute('aria-current'));const a=map.get(e.target.id);if(a)a.setAttribute('aria-current','true');}})},{rootMargin:'-30% 0px -60% 0px'});
+  document.querySelectorAll('main section[id]').forEach(s=>io.observe(s));
+</script>
+</body>
+</html>
