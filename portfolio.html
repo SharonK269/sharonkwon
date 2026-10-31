@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sharon Kwon Portfolio</title>
+<meta name="description" content="Art portfolio of Sharon Kwon: Communication Beyond Words, a five-piece series on the five love languages, with paintings, drawings, and 3D work.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --coral: #e0674f;
+    --coral-deep: #b9493a;
+    --blush: #fbeee9;
+    --sand: #faf6f2;
+    --charcoal: #23262b;
+    --slate: #5b6470;
+    --line: #eadfd9;
+    --ink-on-coral: #fff7f3;
+    --serif: "DM Serif Display", Georgia, "Times New Roman", serif;
+    --sans: "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body { margin: 0; background: #fff; color: var(--charcoal); font-family: var(--sans); font-size: 17px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+  a { color: var(--coral-deep); text-decoration: none; }
+  a:hover { text-decoration: underline; text-underline-offset: 3px; }
+  a:focus-visible { outline: 2px solid var(--coral); outline-offset: 3px; }
+  img { max-width: 100%; height: auto; display: block; }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 0 24px; }
+
+  header.top { position: sticky; top: 0; z-index: 20; background: rgba(255,255,255,.94); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+  .topin { max-width: 980px; margin: 0 auto; padding: 0 24px; height: 62px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  .brand { font-family: var(--serif); font-size: 22px; color: var(--coral-deep); letter-spacing: .2px; }
+  .brand:hover { text-decoration: none; }
+  nav.top ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 22px; flex-wrap: wrap; }
+  nav.top a { color: var(--charcoal); font-size: 14px; font-weight: 500; padding: 6px 0; border-bottom: 2px solid transparent; }
+  nav.top a:hover { text-decoration: none; color: var(--coral-deep); }
+  nav.top a[aria-current="true"] { border-bottom-color: var(--coral); }
+
+  .herowrap { background: var(--blush); }
+  .hero { max-width: 980px; margin: 0 auto; padding: 76px 24px 64px; display: grid; grid-template-columns: 1.25fr .75fr; gap: 56px; align-items: center; }
+  .hero h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(44px, 5.6vw, 66px); line-height: 1.02; margin: 0 0 22px; color: var(--charcoal); }
+  .hero h1 span { color: var(--coral-deep); }
+  .hero .says { font-size: 21px; line-height: 1.5; margin: 0 0 18px; max-width: 34ch; color: var(--charcoal); }
+  .hero .meta { color: var(--slate); font-size: 15.5px; margin: 0 0 28px; max-width: 48ch; }
+  .cta { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn { display: inline-block; font-weight: 600; font-size: 15px; padding: 11px 20px; border-radius: 8px; background: var(--coral); color: #fff; }
+  .btn:hover { background: var(--coral-deep); text-decoration: none; }
+  .btn.ghost { background: transparent; color: var(--coral-deep); border: 1.5px solid var(--coral); }
+  .btn.ghost:hover { background: #fff; }
+  .books { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .books img { border-radius: 6px; border: 4px solid #fff; box-shadow: 0 16px 36px rgba(185,73,58,.22); }
+  .books figcaption { grid-column: 1 / -1; font-size: 13.5px; color: var(--slate); margin-top: 6px; }
+  .books figure { display: contents; }
+
+  .stats { background: var(--coral); color: var(--ink-on-coral); }
+  .stats .wrap { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px 24px; padding: 22px 24px; }
+  .stat .n { font-family: var(--serif); font-size: 26px; line-height: 1.05; }
+  .stat .l { font-size: 13.5px; margin-top: 5px; opacity: .9; }
+
+  main { max-width: 980px; margin: 0 auto; padding: 0 24px 80px; }
+  section { padding: 56px 0 12px; max-width: 760px; }
+  h2 { font-family: var(--serif); font-weight: 400; font-size: 32px; line-height: 1.15; margin: 0 0 6px; color: var(--charcoal); }
+  h2::after { content: ""; display: block; width: 48px; height: 4px; border-radius: 2px; background: var(--coral); margin-top: 12px; }
+  .lead { font-size: 18.5px; color: var(--slate); margin: 18px 0 24px; max-width: 60ch; line-height: 1.55; }
+  h3 { font-family: var(--serif); font-weight: 400; font-size: 22px; margin: 32px 0 4px; color: var(--charcoal); }
+  h4 { font-size: 16px; margin: 20px 0 4px; }
+  p { margin: 0 0 14px; max-width: 66ch; }
+  .when { color: var(--coral-deep); font-size: 14px; font-weight: 600; margin: 0 0 10px; }
+  ul { padding-left: 20px; max-width: 66ch; }
+  li { margin-bottom: 6px; }
+
+  figure { margin: 20px 0; }
+  figcaption { font-size: 13.5px; color: var(--slate); margin-top: 8px; }
+  .photo { border-radius: 10px; border: 1px solid var(--line); }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start; }
+  .side { display: grid; grid-template-columns: 1.3fr 1fr; gap: 28px; align-items: start; }
+  .side p { max-width: none; }
+  .awards { list-style: none; padding: 0; margin: 20px 0 0; max-width: none; display: grid; grid-template-columns: 1fr 1fr; gap: 10px 32px; }
+  .awards li { padding: 12px 14px; background: var(--sand); border-left: 4px solid var(--coral); border-radius: 0 8px 8px 0; font-size: 15px; margin: 0; }
+  .certs { list-style: none; padding: 0; margin: 28px 0 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; max-width: none; }
+  .certs img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: center; border-radius: 8px; border: 1px solid var(--line); background: #fff; }
+  .certs figure { margin: 0; }
+  .certs figcaption { font-size: 12.5px; }
+  .kv { display: grid; grid-template-columns: 160px 1fr; gap: 8px 20px; max-width: 560px; margin: 8px 0 0; }
+  .kv dt { color: var(--slate); font-size: 14.5px; }
+  .kv dd { margin: 0; }
+  .btnrow { display: flex; gap: 12px; flex-wrap: wrap; margin: 6px 0 4px; }
+  .titles { counter-reset: t; list-style: none; padding: 0; margin: 18px 0 22px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px 28px; max-width: none; }
+  .titles li { counter-increment: t; margin: 0; font-size: 15.5px; padding-left: 34px; position: relative; }
+  .titles li::before { content: counter(t); position: absolute; left: 0; top: 1px; width: 24px; height: 24px; border-radius: 50%; background: var(--blush); color: var(--coral-deep); font-weight: 600; font-size: 13px; display: grid; place-items: center; }
+  .three { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; align-items: start; }
+  .three img { aspect-ratio: 3 / 4; object-fit: cover; width: 100%; }
+  section.wide { max-width: none; }
+  section.wide > p, section.wide > .lead { max-width: 66ch; }
+  .series { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 22px; margin: 22px 0 8px; }
+  .piece { background: var(--sand); border-radius: 12px; overflow: hidden; border: 1px solid var(--line); display: flex; flex-direction: column; }
+  .piece button { all: unset; cursor: zoom-in; display: block; background: #fff; }
+  .piece button:focus-visible { outline: 3px solid var(--coral); outline-offset: -3px; }
+  .piece img { width: 100%; aspect-ratio: 1 / 1; object-fit: contain; background: #fff; }
+  .piece .txt { padding: 14px 16px 16px; }
+  .piece .k { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--coral-deep); font-weight: 600; }
+  .piece h4 { font-family: var(--serif); font-weight: 400; font-size: 20px; margin: 4px 0 2px; }
+  .piece .m { font-size: 13px; color: var(--slate); margin: 0 0 8px; }
+  .piece p { font-size: 14.5px; line-height: 1.55; margin: 0; }
+  .statement { background: var(--blush); border-left: 4px solid var(--coral); border-radius: 0 10px 10px 0; padding: 16px 20px; margin: 18px 0 6px; max-width: 70ch; }
+  .statement p { margin: 0; font-size: 16px; }
+  .gallery { columns: 3 230px; column-gap: 18px; margin: 20px 0 8px; }
+  .gallery figure { break-inside: avoid; margin: 0 0 18px; }
+  .gallery button { all: unset; cursor: zoom-in; display: block; border-radius: 10px; overflow: hidden; border: 1px solid var(--line); }
+  .gallery button:focus-visible { outline: 3px solid var(--coral); outline-offset: 2px; }
+  .gallery img { width: 100%; transition: transform .25s ease; }
+  .gallery button:hover img, .piece button:hover img { transform: scale(1.02); }
+  @media (prefers-reduced-motion: reduce) { .gallery img { transition: none; } }
+  dialog.lb { border: 0; padding: 0; background: transparent; max-width: min(1100px, 94vw); }
+  dialog.lb::backdrop { background: rgba(35,38,43,.86); }
+  dialog.lb img { max-height: 80vh; width: auto; max-width: 100%; margin: 0 auto; border-radius: 8px; }
+  dialog.lb p { color: #fff7f3; font-size: 14.5px; text-align: center; margin: 12px auto 0; max-width: 70ch; }
+  dialog.lb .x { position: fixed; top: 14px; right: 18px; background: var(--coral); color: #fff; border: 0; border-radius: 50%; width: 40px; height: 40px; font-size: 22px; line-height: 40px; cursor: pointer; }
+  footer { background: var(--blush); color: var(--slate); font-size: 13.5px; }
+  footer div { max-width: 980px; margin: 0 auto; padding: 22px 24px; }
+
+  @media (max-width: 860px) {
+    .topin { height: auto; padding: 12px 16px; flex-direction: column; align-items: flex-start; gap: 6px; }
+    nav.top ul { gap: 14px; }
+    .hero { grid-template-columns: 1fr; gap: 32px; padding: 44px 16px 44px; }
+    .stats .wrap { grid-template-columns: repeat(2, 1fr); }
+    main { padding: 0 16px 64px; }
+    .two, .side { grid-template-columns: 1fr; }
+    .awards { grid-template-columns: 1fr; }
+    .certs { grid-template-columns: 1fr 1fr; }
+    .titles { grid-template-columns: 1fr; }
+    .three { grid-template-columns: 1fr 1fr; }
+    h2 { font-size: 27px; }
+    .kv { grid-template-columns: 1fr; gap: 2px 0; }
+  }
+</style>
+<style>
+  .phero { background: var(--blush); }
+  .phero .in { max-width: 980px; margin: 0 auto; padding: 64px 24px 52px; }
+  .phero .eyebrow { font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--coral-deep); font-weight: 600; margin: 0 0 10px; }
+  .phero h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(40px, 5.2vw, 60px); line-height: 1.04; margin: 0 0 18px; }
+  .phero h1 span { color: var(--coral-deep); }
+  .phero p { font-size: 18px; color: var(--charcoal); max-width: 62ch; margin: 0 0 12px; }
+  .phero .small { font-size: 14.5px; color: var(--slate); }
+  .work { display: grid; grid-template-columns: 1.1fr 1fr; gap: 36px; align-items: center; padding: 34px 0; border-bottom: 1px solid var(--line); }
+  .work:nth-of-type(even) .pic { order: 2; }
+  .work .pic button { all: unset; cursor: zoom-in; display: block; background: var(--sand); border-radius: 12px; border: 1px solid var(--line); padding: 14px; }
+  .work .pic button:focus-visible { outline: 3px solid var(--coral); outline-offset: 2px; }
+  .work .pic img { width: 100%; max-height: 520px; object-fit: contain; margin: 0 auto; }
+  .work .n { font-family: var(--serif); color: var(--coral); font-size: 42px; line-height: 1; margin: 0 0 6px; }
+  .work h3 { margin: 0 0 4px; font-size: 26px; }
+  .work .m { color: var(--slate); font-size: 14px; margin: 0 0 14px; }
+  .work p { font-size: 16px; }
+  .more { columns: 3 250px; column-gap: 22px; margin: 26px 0 0; }
+  .more figure { break-inside: avoid; margin: 0 0 26px; }
+  .more button { all: unset; cursor: zoom-in; display: block; border-radius: 10px; overflow: hidden; border: 1px solid var(--line); }
+  .more button:focus-visible { outline: 3px solid var(--coral); outline-offset: 2px; }
+  .more figcaption { font-size: 14px; color: var(--charcoal); margin-top: 10px; }
+  .more figcaption b { display: block; font-family: var(--serif); font-weight: 400; font-size: 18px; }
+  .more figcaption .m { display: block; color: var(--coral-deep); font-size: 12.5px; font-weight: 600; margin: 2px 0 6px; }
+  .rec { list-style: none; padding: 0; margin: 18px 0 0; max-width: 70ch; }
+  .rec li { padding: 14px 16px; background: var(--sand); border-left: 4px solid var(--coral); border-radius: 0 8px 8px 0; margin: 0 0 10px; font-size: 15.5px; }
+  .rec b { display: block; }
+  .covers { display: grid; grid-template-columns: repeat(2, 180px); gap: 16px; margin: 16px 0; }
+  .covers img { border-radius: 6px; box-shadow: 0 12px 28px rgba(185,73,58,.2); }
+  section.full { max-width: none; }
+  @media (max-width: 860px) {
+    .phero .in { padding: 40px 16px 36px; }
+    .work { grid-template-columns: 1fr; gap: 18px; }
+    .work:nth-of-type(even) .pic { order: 0; }
+    .covers { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="topin">
+    <a class="brand" href="index.html">Sharon Kwon</a>
+    <nav class="top" aria-label="Sections">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#series">The series</a></li>
+        <li><a href="#more">More work</a></li>
+        <li><a href="#shown">Shown and recognized</a></li>
+        <li><a href="#illustration">Illustration</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="phero" id="top">
+  <div class="in">
+    <p class="eyebrow">Portfolio</p>
+    <h1>Communication <span>Beyond Words</span></h1>
+    <p>My portfolio looks at how people express, communicate, and exchange love without having to speak. A love language is not a language in the literal sense; it is a way of naming the different forms love can take when one person communicates it to another.</p>
+    <p class="small">Acrylic, charcoal, pencil, mixed media, and 3D work. Select any piece to see it larger.</p>
+  </div>
+</div>
+
+<main>
+  <section id="series" class="full">
+    <h2>The Five Love Languages</h2>
+    <p class="lead">Five pieces, one for each love language, in paint, mixed media, and found objects.</p>
+    <article class="work">
+      <div class="pic"><button type="button" data-full="assets/art-words.jpg" data-cap="Words of Affirmation. Mixed media: acrylic paint, colored pencil, and digital."><img src="assets/art-words.jpg" alt="A handwritten love letter on painted wrinkled paper, with small painted figures climbing, sitting on, and holding hearts among the words" loading="lazy"></button></div>
+      <div><div class="n">01</div><h3>Words of Affirmation</h3><p class="m">Mixed media: acrylic paint, colored pencil, and digital</p><p>This piece explores words of affirmation. The words appear as writing and art rather than speech. The wrinkled paper in the background is painted in acrylic, and the letter sits on top of it. The small figures climbing and sitting on the words show how alive words can be. A letter is only words on paper, but the meaning in it and the act of giving it bring the words to life and let the reader step into the world of the letter for a moment.</p></div>
+    </article>
+    <article class="work">
+      <div class="pic"><button type="button" data-full="assets/art-touch.jpg" data-cap="Physical Touch. Mixed media: acrylic paint and digital."><img src="assets/art-touch.jpg" alt="Two hands cupping each other, holding a cluster of words such as trust, care, attachment, and love that spill out between the fingers" loading="lazy"></button></div>
+      <div><div class="n">02</div><h3>Physical Touch</h3><p class="m">Mixed media: acrylic paint and digital</p><p>This piece explores physical touch. The two hands cupping each other show love exchanged through physical contact. Inside the hands I placed words associated with love to represent the feeling that is carried by human touch.</p></div>
+    </article>
+    <article class="work">
+      <div class="pic"><button type="button" data-full="assets/art-gifts.jpg" data-cap="Gift Giving. Acrylic."><img src="assets/art-gifts.jpg" alt="A red gift box with a pink ribbon overflowing with gold coins and jewels, a human face in the largest blue jewel, roses beside it" loading="lazy"></button></div>
+      <div><div class="n">03</div><h3>Gift Giving</h3><p class="m">Acrylic</p><p>This piece explores gift giving. The present box overflowing with treasure and the bouquet beside it show love expressed through gifts. In the biggest jewel I painted a human face to represent the thought we give to the person receiving a gift. In gift giving, love is communicated not only through the object but through the care for the recipient that comes with it.</p></div>
+    </article>
+    <article class="work">
+      <div class="pic"><button type="button" data-full="assets/art-time.jpg" data-cap="Quality Time. 3D: clock, clay, paint, cardboard, plastic, and fabric."><img src="assets/art-time.jpg" alt="A hollowed-out green alarm clock holding a tiny clay family seated around a dinner table with a blue gingham tablecloth" loading="lazy"></button></div>
+      <div><div class="n">04</div><h3>Quality Time</h3><p class="m">3D: clock, clay, paint, cardboard, plastic, and fabric</p><p>This piece explores quality time. The clock stands for time. Inside the hollowed-out clock, a family sits around a dinner table playing board games, eating, and talking, which shows the beauty of time spent with the people you love and how it builds connection.</p></div>
+    </article>
+    <article class="work">
+      <div class="pic"><button type="button" data-full="assets/art-service.jpg" data-cap="Acts of Service. 3D: acrylic paint, heart model, metal bowl, tin foil, tape, beads, glue, and flowers."><img src="assets/art-service.jpg" alt="A painted anatomical heart on a silver serving tray under a raised foil lid, surrounded by beads and tiny dried flowers" loading="lazy"></button></div>
+      <div><div class="n">05</div><h3>Acts of Service</h3><p class="m">3D: acrylic paint, heart model, metal bowl, tin foil, tape, beads, glue, and flowers</p><p>This piece explores acts of service. The metal serving tray lid stands for the act of serving someone. Under the lid, the painted heart represents the love inside acts of service. The beads and flowers around the heart soften the look of the organ and present the heart, and love, as a treasure.</p></div>
+    </article>
+  </section>
+
+  <section id="more" class="full">
+    <h2>More work</h2>
+    <p class="lead">Paintings and drawings on childhood, family, appearance, kindness, and hope, plus observational studies.</p>
+    <div class="more">
+      <figure><button type="button" data-full="assets/art-mirror.jpg" data-cap="Mirror. Acrylic."><img src="assets/art-mirror.jpg" alt="A woman in a blue ball gown standing on an ornate gold mirror whose reflection of her is cracked" loading="lazy"></button><figcaption><b>Mirror</b><span class="m">Acrylic</span>I wanted to focus on the impact physical appearance has on mental health. From the outside you see only a beautiful figure in a beautiful gown, but when she stands on the mirror, all that is reflected is her brokenness and loss of identity, shown through the cracks in the glass.</figcaption></figure>
+      <figure><button type="button" data-full="assets/art-breakfast.jpg" data-cap="Breakfast Time. Acrylic."><img src="assets/art-breakfast.jpg" alt="Eggs and bacon on toast, salt and pepper shakers, buttered toast, and coffee on a red checkered tablecloth" loading="lazy"></button><figcaption><b>Breakfast Time</b><span class="m">Acrylic</span>Painted with the 1950s as my inspiration. I chose a classic American breakfast to represent 1950s diner culture and used a warm palette with vibrant dish colors. Accepted for publication by Celebrating Art.</figcaption></figure>
+      <figure><button type="button" data-full="assets/art-bubbles.jpg" data-cap="Childhood. Acrylic."><img src="assets/art-bubbles.jpg" alt="A girl in a long blue dress blowing bubbles in a green field under a bright sky" loading="lazy"></button><figcaption><b>Childhood</b><span class="m">Acrylic</span>A girl playing in an open field. The bright colors and the flow of her skirt bring a sense of freedom that fits childhood, and the bubbles add another layer of lightness to childhood and its dreams.</figcaption></figure>
+      <figure><button type="button" data-full="assets/art-charcoal.jpg" data-cap="Celebration. Charcoal."><img src="assets/art-charcoal.jpg" alt="Charcoal drawing seen from above of a café table with cake, glasses, and a card reading #1 MOM" loading="lazy"></button><figcaption><b>Celebration</b><span class="m">Charcoal</span>A dining scene with desserts and drinks across the table, capturing a casual moment. The glassware, silverware, and food overlap in a complex way, and the contrasts and highlights add depth. The cake and the family celebrate the role of a mother.</figcaption></figure>
+      <figure><button type="button" data-full="assets/art-lilies.jpg" data-cap="Lilies. Acrylic."><img src="assets/art-lilies.jpg" alt="Pink spotted lilies against a deep blue background" loading="lazy"></button><figcaption><b>Lilies</b><span class="m">Acrylic</span>The contrast between the dark background and the vibrant lilies puts the emphasis on the flowers and stands for the ability to bloom and shine despite the darkness around you.</figcaption></figure>
+      <figure><button type="button" data-full="assets/art-kindness.jpg" data-cap="Kindness. Acrylic."><img src="assets/art-kindness.jpg" alt="A red box of donated toys, a teddy bear, a pink bunny, a robot, and balls, framed by words such as helpful, generosity, and thoughtful" loading="lazy"></button><figcaption><b>Kindness</b><span class="m">Acrylic</span>A donation box of toys, with words about kindness wrapped around the painting. Toys are things people give a lot of care and attention to, so passing them on also passes on that love, in the hope that someone new feels the same happiness.</figcaption></figure>
+      <figure><button type="button" data-full="assets/art-landscape.jpg" data-cap="New Beginnings. Acrylic."><img src="assets/art-landscape.jpg" alt="Thickly painted landscape of billowing clouds over green hills and a field of wildflowers" loading="lazy"></button><figcaption><b>New Beginnings</b><span class="m">Acrylic</span>A landscape about hope, healing, and new beginnings. The bright sky and soft clouds bring peace, the green hills and wildflowers stand for growth, and the move from deep blues to vibrant greens follows the path from difficult moments toward brighter days.</figcaption></figure>
+      <figure><button type="button" data-full="assets/art-stilllife-1.jpg" data-cap="Still Life I. Pencil."><img src="assets/art-stilllife-1.jpg" alt="Pencil drawing of a glass, plate with fork and knife, pepper mills, teapot, and teacup on a round table" loading="lazy"></button><figcaption><b>Still Life I</b><span class="m">Pencil</span>Observational still life.</figcaption></figure>
+      <figure><button type="button" data-full="assets/art-stilllife-2.jpg" data-cap="Still Life II. Pencil."><img src="assets/art-stilllife-2.jpg" alt="Detailed pencil still life of a ribboned jar with flowers, lemons, and a patterned bowl" loading="lazy"></button><figcaption><b>Still Life II</b><span class="m">Pencil</span>Observational still life.</figcaption></figure>
+    </div>
+  </section>
+
+  <section id="shown">
+    <h2>Shown and recognized</h2>
+    <ul class="rec">
+      <li><b>Healing Through the Arts, Community Award, 2026</b>Hope &amp; Healing Juried Art Show, Community Gallery of the Allentown Art Museum, June 11 to August 9, 2026. Art from the show is available to be placed in hospitals, clinics, mental health facilities, and hospices.</li>
+      <li><b>AIM Design Challenge, Honorable Mention, 2026</b>9th annual challenge for youth mental health awareness, AIM Youth Mental Health.</li>
+      <li><b>Celebrating Art</b><em>Breakfast Time</em> accepted for publication in the Celebrating Art anthology.</li>
+    </ul>
+    <figure>
+      <img class="photo" src="assets/exhibition-2025.jpg" alt="Sharon and other student artists holding their framed artwork at the 2025 art exhibition" loading="lazy">
+      <figcaption>Student art exhibition, 2025.</figcaption>
+    </figure>
+  </section>
+
+  <section id="illustration">
+    <h2>Illustration</h2>
+    <p class="lead">I illustrated all seven books of Mia’s Feelings Lab, a children’s series on the science of emotions written by Kayla Park, for readers ages 7 to 13.</p>
+    <div class="covers">
+      <img src="assets/book1.jpg" alt="Cover of Why Do I Get So Angry?, Mia’s Feelings Lab Book 1, illustrated by Sharon Kwon" loading="lazy">
+      <img src="assets/book2.jpg" alt="Cover of Why Am I Shy Around New People?, Mia’s Feelings Lab Book 2, illustrated by Sharon Kwon" loading="lazy">
+    </div>
+    <div class="btnrow">
+      <a class="btn" href="index.html#books">About the books</a>
+      <a class="btn ghost" href="https://www.amazon.com/dp/B0HMK46R5G" target="_blank" rel="noopener">The series on Amazon</a>
+    </div>
+  </section>
+</main>
+<footer><div>© 2026 Sharon Kwon · <a href="mailto:sharonkwon020609@gmail.com">sharonkwon020609@gmail.com</a> · <a href="index.html">Back to the main page</a></div></footer>
+
+<dialog class="lb" id="lb" aria-label="Artwork viewer">
+  <button class="x" type="button" aria-label="Close">×</button>
+  <img id="lbimg" src="" alt="">
+  <p id="lbcap"></p>
+</dialog>
+<script>
+  const lb=document.getElementById('lb'), lbimg=document.getElementById('lbimg'), lbcap=document.getElementById('lbcap');
+  document.querySelectorAll('[data-full]').forEach(b=>b.addEventListener('click',()=>{
+    const im=b.querySelector('img'); lbimg.src=b.dataset.full; lbimg.alt=im?im.alt:''; lbcap.textContent=b.dataset.cap||'';
+    if(lb.showModal) lb.showModal(); else window.open(b.dataset.full,'_blank');
+  }));
+  lb.querySelector('.x').addEventListener('click',()=>lb.close());
+  lb.addEventListener('click',e=>{ if(e.target===lb) lb.close(); });
+</script>
+</body>
+</html>
